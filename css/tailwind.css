@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@font-face {
+    font-family: 'CascadiaCode';
+    src: url('/fonts/CascadiaCode.ttf');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities; 
+
+@layer base {
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    textarea,
+    select {
+        @apply w-full rounded border-gray-400 focus:border-blue-500 focus:ring-blue-500;
+    }
+
+    [type='checkbox'], [type='radio'] {
+        @apply text-blue-500 focus:ring-blue-600;
+    }
+}
+
+@layer components {
+    .btn-blue {
+        @apply px-7 py-3 rounded-lg bg-do-blue-light hover:bg-do-blue-medium text-white font-bold;
+    }
+
+    .btn-blue-mobile {
+        @apply text-sm px-4 py-3 rounded-lg bg-do-blue-light hover:bg-do-blue-medium text-white font-bold;
+    }
+
+    .btn-white {
+        @apply border hover:bg-gray-200 px-7 py-3 rounded-lg font-medium;
+    }
+
+    .btn-white-blue {
+        @apply px-5 py-3 rounded-lg bg-white active:bg-gray-200 font-medium border text-do-blue-light focus:outline-dotted focus:outline-1 focus:outline-do-blue-lighter;
+    }
+
+    .btn-gray {
+        @apply px-3 py-3 bg-gray-200 hover:bg-gray-300 rounded-lg;
+    }
+
+    .panel {
+        @apply bg-white rounded-lg shadow-lg text-sm p-5 py-5;
+    }
+
+}
+
+
+
+
+
+/* ----------------------------------------Autoscroll section */
+.slider {
+    height: auto;
+    margin: auto;
+    position: relative;
+    width: auto;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+/* "slide__track" se utiliza para definir el ancho y la animación 
+del contenido del slider. Especifica que las imágenes del slider 
+serán dispuestas en una línea de tiempo y ejecutado en un loop 
+infinito durante 30 segundos. */
+.slide__track__right {
+    display: flex;
+    width: calc(250px * 18);
+    animation: scroll-right 40s linear infinite;
+}
+
+.slide__track__left {
+    display: flex;
+    width: calc(250px * 18);
+    animation: scroll-left 40s linear infinite;
+}
+
+
+/* "slide__track:hover" se utiliza para detener temporalmente la 
+animación del slider cuando el usuario pasa el mouse sobre el 
+contenido del slider. */
+.slide__track__right:hover,
+.slide__track__left:hover{
+    animation-play-state: paused;
+}
+
+
+/* "@keyframes scroll" define cómo la animación del slider se va a comportar, 
+especificando la trayectoria que sigue a lo largo del tiempo. En este caso, 
+cuando se inicializa la animación, la primera imagen del slider será mostrada 
+al usuario y luego, después de 30 segundos, se mostrará la última imagen. */
+@keyframes scroll-right  {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 10));
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+      transform: translateX(calc(-250px * 10));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+/* código "slide" se utiliza para crear una perspectiva en 3D en el contenido del slider */
+/* .slide {
+    perspective: 100px;
+}
+  */
+/* Los últimos bloques de código "@slider::before" y "@slider::after" son utilizados para definir 
+gradientes transparentes en los bordes del slider para darle una apariencia más atractiva. Los 
+gradientes se aplican en capas con contenido absoluto, superpuestas encima del contenido del slider. */
+/* .slider::before,
+.slide::after {
+    background: linear-gradient(to right, rgba(243, 244, 246) 0%,
+    rgba(255,255,255,0) 50%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 5%;
+    z-index: 2;
+} 
+
+.slider::after,
+.slide::before {
+    background: linear-gradient(to right, rgba(243, 244, 246) 0%,
+    rgba(255,255,255,0) 50%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 5%;
+    z-index: 2;
+} 
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+} */
+
+
+
+
+
+  
