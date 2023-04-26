@@ -91,3 +91,13 @@ new Vue({
     }
 })
 
+
+
+const menuBtn = document.getElementById('menu-btn');
+const menu = document.getElementById('menu');
+
+menuBtn.addEventListener('click', () => {
+  menu.classList.toggle('hidden');
+  menuBtn.querySelector('svg:last-of-type').classList.toggle('hidden');
+  menuBtn.querySelector('svg:first-of-type').classList.toggle('hidden');
+});
