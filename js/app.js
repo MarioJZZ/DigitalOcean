@@ -94,6 +94,8 @@ new Vue({
 
 
 const menuBtn = document.getElementById('menu-btn');
+const menuOpen = document.getElementById('menu-open');
+const menuClose = document.getElementById('menu-close');
 const menu = document.getElementById('menu');
 
 menuBtn.addEventListener('click', () => {
@@ -101,3 +103,22 @@ menuBtn.addEventListener('click', () => {
   menuBtn.querySelector('svg:last-of-type').classList.toggle('hidden');
   menuBtn.querySelector('svg:first-of-type').classList.toggle('hidden');
 });
+
+
+// const menuBtn = document.getElementById("menu-btn");
+// const menuOpen = document.getElementById("menu-open");
+// const menuClose = document.getElementById("menu-close");
+// const menu = document.getElementById("menu");
+
+
+// menuBtn.addEventListener("click", function() {
+//   if (menu.classList.contains("hidden")) {    
+//     menu.classList.remove("hidden"); 
+//      menuOpen.classList.add("hidden");
+//     menuClose.classList.remove("hidden");
+//   } else {
+//     menu.classList.add("hidden");
+//     menuOpen.classList.remove("hidden");
+//     menuClose.classList.add("hidden");
+//   }
+// });
